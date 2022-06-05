@@ -2,7 +2,7 @@
 session_start();
 
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: welcome.php");
+    header("location: index.php");
     exit;
 }
 
@@ -48,7 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
 
-                            header("location: welcome.php");
+                            header("location: index.php");
                         } else{
                             // Password is not valid, display a generic error message
                             $login_err = "Niepoprawny login lub hasło.";
@@ -77,39 +77,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Zaloguj się</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Numans');
-
-        html,
-        body {
-            background-image: url(img/background.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            height: 100%;
-            font-family: 'Numans', sans-serif;
-
-        }
-
-        .container {
-            height: 100%;
-            align-content: center;
-        }
-
-        .card {
-            min-height: 370px;
-            margin-top: auto;
-            margin-bottom: auto;
-            width: 400px;
-            background-color: rgba(255, 255, 255, 0.9) !important;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <div class="container">
+<body class="login-body">
+    <div class="container login-container">
         <div class="d-flex justify-content-center h-100">
-            <div class="card">
+            <div class="card login-card">
                 <div class="card-header">
                     <h2>Zaloguj się</h2>
                     <p>Wpisz swoje dane aby się zalogować.</p>

@@ -55,35 +55,43 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <title>Zmień hasło</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<div class="wrapper">
-    <h2>Zmień hasło</h2>
-    <p>Wypełnij poniższy formularz, aby zresetować hasło.</p>
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <div class="form-group">
-            <label>Nowe hasło</label>
-            <input type="password" name="new_password" class="form-control <?php echo (!empty($new_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $new_password; ?>">
-            <span class="invalid-feedback"><?php echo $new_password_err; ?></span>
+
+<body class="login-body">
+    <div class="container login-container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card login-card">
+                <div class="card-header">
+                    <h2>Zmień hasło</h2>
+                    <p>Wypełnij poniższy formularz, aby zresetować hasło.</p>
+                </div>
+                <div class="card-body">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                        <div class="form-group">
+                            <label>Nowe hasło</label>
+                            <input type="password" name="new_password" class="form-control <?php echo (!empty($new_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $new_password; ?>">
+                            <span class="invalid-feedback"><?php echo $new_password_err; ?></span>
+                        </div>
+                        <div class="form-group mt-2">
+                            <label>Potwierdź hasło</label>
+                            <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>">
+                            <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+                        </div>
+                        <div class="form-group mt-4">
+                            <a class="btn btn-link ml-2" href="index.php">Anuluj</a>
+                            <input type="submit" class="btn btn-primary float-end" value="Zmień">
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="form-group mt-2">
-            <label>Potwierdź hasło</label>
-            <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>">
-            <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
-        </div>
-        <div class="form-group mt-2">
-            <input type="submit" class="btn btn-primary" value="Zmień">
-            <a class="btn btn-link ml-2" href="welcome.php">Anuluj</a>
-        </div>
-    </form>
-</div>
+    </div>
 </body>
+
 </html>
