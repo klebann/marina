@@ -17,10 +17,10 @@
 
 <section class="pb-5 pt-5">
     <div class="container">
-        <h1>Aktualności</h1>
+        <h1>Aktualności OSiR</h1>
         <hr>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-4">
                 <div class="card mb-4 box-shadow">
                     <img class="card-img-top" alt="Post1" src="img/post1.jpg" data-holder-rendered="true">
                     <div class="card-body">
@@ -36,7 +36,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-4">
                 <div class="card mb-4 box-shadow">
                     <img class="card-img-top" alt="Post2" src="img/post2.jpg" data-holder-rendered="true">
                     <div class="card-body">
@@ -52,7 +52,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-4">
                 <div class="card mb-4 box-shadow">
                     <img class="card-img-top" alt="Post3" src="img/post3.jpg" data-holder-rendered="true">
                     <div class="card-body">
@@ -68,7 +68,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-4">
                 <div class="card mb-4 box-shadow">
                     <img class="card-img-top" alt="Post4" src="img/post4.jpg" data-holder-rendered="true">
                     <div class="card-body">
@@ -84,7 +84,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-4">
                 <div class="card mb-4 box-shadow">
                     <img class="card-img-top" alt="Post5" src="img/post5.png" data-holder-rendered="true">
                     <div class="card-body">
@@ -100,7 +100,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6 col-lg-4">
                 <div class="card mb-4 box-shadow">
                     <img class="card-img-top" alt="Post6" src="img/post6.png" data-holder-rendered="true">
                     <div class="card-body">

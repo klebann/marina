@@ -25,11 +25,12 @@ function naglowek($title, $what_active = 0) {
             <script src="https://kit.fontawesome.com/4f0dacf5ab.js" crossorigin="anonymous"></script>
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
             <link rel="stylesheet" href="css/style.css">
+            <link rel="icon" href="img/icon.png">
             <title>$title</title>
         </head>
 
         <body>
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container">
                     <a href="index.php" class="navbar-brand">Marina</a>
                     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -58,10 +59,10 @@ function naglowek($title, $what_active = 0) {
                                     <b>$username</b>
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a href="profile.html" class="dropdown-item">
+                                    <a href="profile.php" class="dropdown-item">
                                         <i class="fas fa-user-circle"></i> Profil
                                     </a>
-                                    <a href="settings.html" class="dropdown-item">
+                                    <a href="settings.php" class="dropdown-item">
                                         <i class="fas fa-cog"></i> Ustawienia
                                     </a>
                                 </div>
@@ -77,7 +78,7 @@ function naglowek($title, $what_active = 0) {
             </nav>
 
             <header id="weather">
-                <div class="container">
+                <div class="container p-1">
                     <a class="weatherwidget-io" href="https://forecast7.com/pl/53d9114d25/swinoujscie/" data-label_1="ŚWINOUJŚCIE" data-label_2="Pogoda" data-theme="original">ŚWINOUJŚCIE Pogoda</a>
                 </div>
             </header>
@@ -86,8 +87,11 @@ function naglowek($title, $what_active = 0) {
 
 function stopka() {
     echo <<<END
+        <div style="height: 150px">
+        </div>
+    
         <!-- FOOTER -->
-        <footer id="main-footer" class="bg-dark text-white p-5">
+        <footer id="main-footer" class="bg-dark text-white py-3 fixed-bottom">
             <div class="container">
                 <div class="row">
                     <div class="col-6">
@@ -96,7 +100,7 @@ function stopka() {
                         </a>
                     </div>
                     <div class="col-6">
-                        <p class="lead text-end">
+                        <p class="lead text-end pt-2">
                             Copyright &copy; <span id="year"></span>
                             Marina
                         </p>
