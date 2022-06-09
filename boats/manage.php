@@ -1,10 +1,10 @@
 <?php
-require_once "config.php";
-require_once("common.php");
+require_once "../config.php";
+require_once("../common.php");
 check_login();
 
 if (!isset($_GET["id"])) {
-    header("location: boats.php");
+    header("location: list.php");
     exit;
 }
 
@@ -14,7 +14,7 @@ $result = mysqli_query($link, "SELECT * FROM boats WHERE userid = $userid AND id
 $row = mysqli_fetch_array($result);
 
 if (empty($row)) {
-    header("location: boats.php");
+    header("location: list.php");
     exit;
 }
 
@@ -23,13 +23,20 @@ naglowek("Zarządzaj łodzią", 10);
 
 <section>
     <div class="container mt-3">
-        <div class="mb-3">
-            <h1>Łódź "<?php echo $row['nazwa'] ?>"</h1>
-            <a href="edit-boat.php?id=<?php echo $row['id']?>" class="btn btn-primary">Edytuj Dane</a>
-            <a class="btn btn-danger">Usuń</a>
+        <div class="mb-2 d-inline-block w-100">
+            <div class="float-start">
+                <h1>
+                   <a href="manage.php" class="btn btn-secondary">&lt;</a>
+                    Łódź "<?php echo $row['nazwa'] ?>"
+                </h1>
+            </div>
+            <div class="float-end">
+                <a href="edit.php?id=<?php echo $row['id']?>" class="btn btn-primary">Edytuj Dane</a>
+                <a href="" class="btn btn-danger">Usuń</a>
+            </div>
         </div>
-        
-        
+
+
         <table class="table table-striped">
             <tbody>
                 <tr>
@@ -66,12 +73,14 @@ naglowek("Zarządzaj łodzią", 10);
 </section>
 
 <section>
-   <div class="container">
-       <h1>Akcje:</h1>
-        <a class="btn btn-primary">Zamów Zimowanie</a>
-        <a class="btn btn-primary">Zamów Miejsce Postojowe</a>
-        <a class="btn btn-primary">Zamów Dźwig</a>
-   </div>
+    <div class="container">
+        <h1>Akcje:</h1>
+        <div id="actions" class="mt-3">
+            <a class="btn btn-primary">Zamów Zimowanie</a>
+            <a class="btn btn-primary">Zamów Miejsce Postojowe</a>
+            <a class="btn btn-primary">Zamów Dźwig</a>
+        </div>
+    </div>
 </section>
 
 <?php

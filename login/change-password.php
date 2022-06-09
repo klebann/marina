@@ -6,7 +6,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-require_once "config.php";
+require_once "../config.php";
 
 $new_password = $confirm_password = "";
 $new_password_err = $confirm_password_err = "";
@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             if(mysqli_stmt_execute($stmt)){
                 session_destroy();
-                header("location: login.php");
+                header("location: index.php");
                 exit();
             } else{
                 echo "Ups! Coś poszło nie tak. Spróbuj ponownie później.";
@@ -60,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Zmień hasło</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body class="login-body">
@@ -84,7 +84,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
                         </div>
                         <div class="form-group mt-4">
-                            <a class="btn btn-link ml-2" href="index.php">Anuluj</a>
+                            <a class="btn btn-link ml-2" href="/marina/index.php">Anuluj</a>
                             <input type="submit" class="btn btn-primary float-end" value="Zmień">
                         </div>
                     </form>

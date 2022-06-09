@@ -1,16 +1,16 @@
 <?php
-require_once "config.php";
-require_once("common.php");
+require_once "../config.php";
+require_once("../common.php");
 check_login();
 
 if (!isset($_GET["id"])) {
-    header("location: boats.php");
+    header("location: list.php");
     exit;
 }
 
 naglowek("Usuwanie łodzi", 5);
 ?>
-<div class="container mt-5">    
+<div class="container mt-5">
 
 <?php
 
@@ -33,6 +33,6 @@ if (mysqli_num_rows($query) > 0) {
   echo "<div class='alert alert-danger' role='alert'>Nie ma takiej łodzi</div>";
 }
 
-echo "<a href='boats.php'>Powrót</a></div>";
+echo "<a href='list.php'>Powrót</a></div>";
 stopka();
 ?>

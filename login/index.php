@@ -2,11 +2,11 @@
 session_start();
 
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: index.php");
+    header("location: ../index.php");
     exit;
 }
 
-require_once "config.php";
+require_once "../config.php";
 
 $username = $password = "";
 $username_err = $password_err = $login_err = "";
@@ -48,7 +48,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
 
-                            header("location: index.php");
+                            header("location: ../index.php");
                         } else{
                             // Password is not valid, display a generic error message
                             $login_err = "Niepoprawny login lub hasło.";
@@ -77,7 +77,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Zaloguj się</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body class="login-body">

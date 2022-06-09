@@ -1,5 +1,5 @@
 <?php
-require_once "config.php";
+require_once "../config.php";
 
 $username = $email = $password = $confirm_password = "";
 $username_err = $email_err = $password_err = $confirm_password_err = "";
@@ -74,7 +74,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_email = $email;
 
             if(mysqli_stmt_execute($stmt)){
-                header("location: login.php");
+                header("location: index.php");
             } else{
                 echo "Oops! Coś poszło nie tak. Spróbuj ponownie później.";
             }
@@ -101,7 +101,7 @@ function test_input($data) {
     <meta charset="UTF-8">
     <title>Utwórz konto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body class="login-body">
@@ -142,7 +142,7 @@ function test_input($data) {
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center">
-                        <p>Masz już konto? <a href="login.php">Zaloguj się tutaj</a>.</p>
+                        <p>Masz już konto? <a href="index.php">Zaloguj się tutaj</a>.</p>
                     </div>
                 </div>
             </div>
