@@ -18,7 +18,7 @@ if (empty($row)) {
     exit;
 }
 
-naglowek("Zarządzaj łodzią", 10);
+naglowek("Zarządzaj łodzią", 1);
 ?>
 
 <section>
@@ -26,7 +26,7 @@ naglowek("Zarządzaj łodzią", 10);
         <div class="mb-2 d-inline-block w-100">
             <div class="float-start">
                 <h1>
-                   <a href="manage.php" class="btn btn-secondary">&lt;</a>
+                    <a href="manage.php" class="btn btn-secondary">&lt;</a>
                     Łódź "<?php echo $row['nazwa'] ?>"
                 </h1>
             </div>
@@ -35,7 +35,6 @@ naglowek("Zarządzaj łodzią", 10);
                 <a href="" class="btn btn-danger">Usuń</a>
             </div>
         </div>
-
 
         <table class="table table-striped">
             <tbody>
@@ -75,12 +74,67 @@ naglowek("Zarządzaj łodzią", 10);
 <section>
     <div class="container">
         <h1>Akcje:</h1>
-        <div id="actions" class="mt-3">
-            <a class="btn btn-primary">Zamów Zimowanie</a>
-            <a class="btn btn-primary">Zamów Miejsce Postojowe</a>
-            <a class="btn btn-primary">Zamów Dźwig</a>
+        <hr>
+        <div id="zimowanie">
+            <h3>1. Zimowania</h3>
+<?php
+$sql = "SELECT *
+FROM wintering w, place p
+WHERE p.number = w.placeNumber
+AND w.boatId = $boatid";
+$zimowania = mysqli_query($link, $sql);
+if (mysqli_num_rows($zimowania) !== 0) {
+?>
+<table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Miejsce</th>
+                        <th scope="col">Start</th>
+                        <th scope="col">Koniec</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+<?php
+    while($row = mysqli_fetch_array($zimowania)) {
+        echo "
+            <tr>
+                <td scope='row'>".
+                    $row['id']
+                ."</td>
+                <td>".
+                    $row['name']
+                ."</td>
+                <td>".
+                    $row['startDate']
+                ."</td>
+                <td>".
+                    $row['endDate']
+                ."</td>
+                <td>".
+                    $row['status']
+                ."</td>
+            </tr>
+        ";
+    }
+    echo "</tbody></table>";
+}
+?>
+                    
+                
+            <a href="wintering.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">Zamów Zimowanie</a>
         </div>
-    </div>
+        <hr>
+        <div id="postojowe">
+            <h3>2. Miejsca Postojowe</h3>
+            <a href="wintering.php?id=<?php echo $row['id'] ?>" class="btn btn-primary disabled">Zamów Miejsce Postojowe</a>
+            <hr>
+            <div id="dzwig">
+                <h3>3. Dźwig</h3>
+                <a href="wintering.php?id=<?php echo $row['id'] ?>" class="btn btn-primary disabled">Zamów Dźwig</a>
+            </div>
+        </div>
 </section>
 
 <?php

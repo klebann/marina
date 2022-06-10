@@ -42,13 +42,13 @@ function naglowek($title, $what_active = 0) {
                                 <a href="/marina/index.php" class="nav-link $active[0]">Menu</a>
                             </li>
                             <li class="nav-item px-2">
-                                <a href="/marina/boats/list.php" class="nav-link $active[1]">Moje łodzie</a>
+                                <a href="/marina/boats/list.php" class="nav-link $active[1]">Miejsca Postojowe</a>
                             </li>
                             <li class="nav-item px-2">
-                                <a href="/marina/free-places.php" class="nav-link $active[2]">Wolne miejsca</a>
+                                <a href="/marina/free-places.php" class="nav-link $active[2]">Mapa</a>
                             </li>
                             <li class="nav-item px-2">
-                                <a href="/marina/settlements.php" class="nav-link $active[3]">Rozliczenia</a>
+                                <a href="/marina/settlements.php" class="disabled nav-link $active[3]">Rozliczenia</a>
                             </li>
                         </ul>
 
@@ -59,10 +59,13 @@ function naglowek($title, $what_active = 0) {
                                     <b>$username</b>
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a href="profile.php" class="dropdown-item">
+                                    <a href="/marina/profile.php" class="dropdown-item">
                                         <i class="fas fa-user-circle"></i> Profil
                                     </a>
-                                    <a href="settings.php" class="dropdown-item">
+                                    <a href="/marina/login/change-password.php" class="dropdown-item">
+                                        <i class="fas fa-user-lock"></i> Zmień hasło
+                                    </a>
+                                    <a href="/marina/settings.php" class="dropdown-item">
                                         <i class="fas fa-cog"></i> Ustawienia
                                     </a>
                                 </div>
@@ -94,12 +97,18 @@ function stopka() {
         <footer id="main-footer" class="bg-dark text-white py-3 fixed-bottom">
             <div class="container">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-5 m-auto">
                         <a href="https://www.osir.swinoujscie.pl" target="_blank" title="OSiR Wyspiarz">
                             <img src="https://www.osir.swinoujscie.pl/wp-content/themes/osirsw/images/logo.png" alt="OSiR Wyspiarz">
                         </a>
                     </div>
-                    <div class="col-6">
+                    <div class="col-4 text-center">
+                        <div class="d-inline">
+                            KAMERA:
+                        </div>
+                        <a title="Kamera w porcie jachtowym Świnoujście" href="http://88.218.254.213:8092/player.html" target="_blank"><img src="http://www.osir.swinoujscie.pl/wp-content/uploads/2017/05/port.jpg" alt="kamera" width="80" height="80" class="ms-3 alignnone size-full wp-image-10303"></a>
+                    </div>
+                    <div class="col-3 m-auto">
                         <p class="lead text-end pt-2">
                             Copyright &copy; <span id="year"></span>
                             Marina

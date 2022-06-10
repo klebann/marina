@@ -2,12 +2,14 @@
 require_once("common.php");
 check_login();
 
-naglowek("Pusta", 5);
+naglowek("Wolne miejsca", 2);
 ?>
 
 <div class="container text-center ">
-    <h1 class="mt-5">Strona w trakcie budowy.</h1>
-    <a href="index.php"><h2>Powrót...</h2></a>
+    <a href="index.php" class="btn btn-primary mt-3">
+        &lt; Powrót
+    </a>
+    <img src="img/marina-map.png" class="img-fluid mt-3 mb-3" alt="mapa">
 </div>
 
 <?php

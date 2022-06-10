@@ -69,7 +69,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="card login-card">
                 <div class="card-header">
                     <h2>Zmień hasło</h2>
-                    <p>Wypełnij poniższy formularz, aby zresetować hasło.</p>
+                    <p>Wypełnij poniższy formularz, aby zmienić hasło.</p>
                 </div>
                 <div class="card-body">
                     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
