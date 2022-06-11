@@ -42,7 +42,7 @@ function naglowek($title, $what_active = 0) {
                                 <a href="/marina/index.php" class="nav-link $active[0]">Menu</a>
                             </li>
                             <li class="nav-item px-2">
-                                <a href="/marina/boats/list.php" class="nav-link $active[1]">Miejsca Postojowe</a>
+                                <a href="/marina/boats/list.php" class="nav-link $active[1]">Moje łodzie</a>
                             </li>
                             <li class="nav-item px-2">
                                 <a href="/marina/free-places.php" class="nav-link $active[2]">Mapa</a>

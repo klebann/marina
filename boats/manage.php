@@ -123,16 +123,16 @@ if (mysqli_num_rows($zimowania) !== 0) {
 ?>
                     
                 
-            <a href="wintering.php?id=<?php echo $row['id'] ?>" class="btn btn-primary">Zamów Zimowanie</a>
+            <a href="wintering.php?id=<?php echo $boatid ?>" class="btn btn-primary">Zamów Zimowanie</a>
         </div>
         <hr>
         <div id="postojowe">
             <h3>2. Miejsca Postojowe</h3>
-            <a href="wintering.php?id=<?php echo $row['id'] ?>" class="btn btn-primary disabled">Zamów Miejsce Postojowe</a>
+            <a href="wintering.php?id=<?php echo $boatid ?>" class="btn btn-primary disabled">Zamów Miejsce Postojowe</a>
             <hr>
             <div id="dzwig">
                 <h3>3. Dźwig</h3>
-                <a href="wintering.php?id=<?php echo $row['id'] ?>" class="btn btn-primary disabled">Zamów Dźwig</a>
+                <a href="wintering.php?id=<?php echo $boatid ?>" class="btn btn-primary disabled">Zamów Dźwig</a>
             </div>
         </div>
 </section>

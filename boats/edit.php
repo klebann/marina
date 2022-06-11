@@ -12,22 +12,13 @@ $nazwa = $mmsi = $opis = $dlugosc = $szerokosc = $zanurzenie = "";
 $nazwa_err = $mmsi_err = $opis_err = $dlugosc_err = $szerokosc_err = $zanurzenie_err = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    // Validate username
-    if(empty(trim($_POST["nazwa"]))) {
-        $nazwa_err = "Wprowadź nazwę.";
-    } elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["nazwa"]))){
-        $nazwa_err = "Nazwa łodzi może zawierać tylko litery, liczby i -";
-    } else {
-        $nazwa = test_input($_POST["nazwa"]);
-    }
-
     if (empty(trim($_POST["mmsi"]))) {
         $mmsi = null;
     } else {
         $mmsi = test_input($_POST['mmsi']);
     }
     
+    $nazwa = test_input($_POST["nazwa"]);
     $opis = test_input($_POST['opis']);
     $dlugosc = test_input($_POST['dlugosc']);
     $szerokosc = test_input($_POST['szerokosc']);
